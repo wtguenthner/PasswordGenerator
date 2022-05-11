@@ -39,74 +39,84 @@ function generatePassword(){
 
   var randomPassword=[];
   var i=0;
-  var numberConfirm = (prompt("Would you like numbers in your password? Type Y/N"));
+  var numberConfirm = (prompt("Would you like numbers in your password? Type y/n"));
     
 //Confirms if user wants numbers in their password.
  while(i<1){
-    if(numberConfirm === 'Y'){
+    if(numberConfirm === 'y'){
       randomPassword = randomPassword.concat(numbers);
       i++;
-    }else if(numberConfirm === 'N'){
+    }else if(numberConfirm === 'n'){
   
       i++;
     }else{
-      alert("Invalid input. Please type Y/N");
-      var numberConfirm = (prompt("Would you like numbers in your password? Type Y/N"));
+      alert("Invalid input. Please type y/n");
+      var numberConfirm = (prompt("Would you like numbers in your password? Type y/n"));
     }
  }
  //Resets iterator 
 var i=0;
-var characterConfirm = (prompt("Would you like characters in your password? Type Y/N"));
+var characterConfirm = (prompt("Would you like characters in your password? Type y/n"));
 
 //Confirms if user wants characters in their password.
  while(i<1){
-  if(characterConfirm === 'Y'){
+  if(characterConfirm === 'y'){
     randomPassword = randomPassword.concat(characters);
     i++;
-  }else if(characterConfirm === 'N'){
+  }else if(characterConfirm === 'n'){
   
     i++;
   }else{
-    alert("Invalid input. Please type Y/N");
-    var characterConfirm = (prompt("Would you like characters in your password? Type Y/N"));
+    alert("Invalid input. Please type y/n");
+    var characterConfirm = (prompt("Would you like characters in your password? Type y/n"));
     
   }
 }
 
 i=0;
-var upperConfirm = (prompt("Would you like upper case letters in your password? Type Y/N"));
+var upperConfirm = (prompt("Would you like upper case letters in your password? Type y/n"));
 while(i<1){
-  if(upperConfirm === 'Y'){
+  if(upperConfirm === 'y'){
     randomPassword = randomPassword.concat(upper);
     i++;
-  }else if(upperConfirm === 'N'){
+  }else if(upperConfirm === 'n'){
   
     i++;
   }else{
-    alert("Invalid input. Please type Y/N");
-    var upperConfirm = (prompt("Would you like upper case letters in your password? Type Y/N"));
+    alert("Invalid input. Please type y/n");
+    var upperConfirm = (prompt("Would you like upper case letters in your password? Type y/n"));
     
   }
 }
 
 i=0;
-var lowerConfirm = (prompt("Would you like lower case letters in your password? Type Y/N"));
+var lowerConfirm = (prompt("Would you like lower case letters in your password? Type y/n"));
 while(i<1){
-  if(lowerConfirm === 'Y'){
+  if(lowerConfirm === 'y'){
     randomPassword = randomPassword.concat(lower);
     i++;
-  }else if(lowerConfirm === 'N'){
+  }else if(lowerConfirm === 'n'){
   
     i++;
   }else{
-    alert("Invalid input. Please type Y/N");
-    var lowerConfirm = (prompt("Would you like lower case letters in your password? Type Y/N"));
+    alert("Invalid input. Please type y/n");
+    var lowerConfirm = (prompt("Would you like lower case letters in your password? Type y/n"));
     
   }
 }
+if(numberConfirm === 'n' && characterConfirm === 'n' && upperConfirm === 'n' && lowerConfirm === 'n'){
+  alert("Please select at least one password paramter");
+ generatePassword();
 
+}
+var finalPassword = "";
+for(var x=0; x < passwordLength; x++){
+  finalPassword = finalPassword + randomPassword[Math.floor(Math.random() * randomPassword.length)];
+ 
+  }
+  
 
-
+return finalPassword;
    
 }
 
