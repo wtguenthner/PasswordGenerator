@@ -73,6 +73,37 @@ var characterConfirm = (prompt("Would you like characters in your password? Type
   }
 }
 
+i=0;
+var upperConfirm = (prompt("Would you like upper case letters in your password? Type Y/N"));
+while(i<1){
+  if(upperConfirm === 'Y'){
+    randomPassword = randomPassword.concat(upper);
+    i++;
+  }else if(upperConfirm === 'N'){
+  
+    i++;
+  }else{
+    alert("Invalid input. Please type Y/N");
+    var upperConfirm = (prompt("Would you like upper case letters in your password? Type Y/N"));
+    
+  }
+}
+
+i=0;
+var lowerConfirm = (prompt("Would you like lower case letters in your password? Type Y/N"));
+while(i<1){
+  if(lowerConfirm === 'Y'){
+    randomPassword = randomPassword.concat(lower);
+    i++;
+  }else if(lowerConfirm === 'N'){
+  
+    i++;
+  }else{
+    alert("Invalid input. Please type Y/N");
+    var lowerConfirm = (prompt("Would you like lower case letters in your password? Type Y/N"));
+    
+  }
+}
 
 
 
