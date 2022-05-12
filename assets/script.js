@@ -34,7 +34,8 @@ function generatePassword(){
   //Checks if input is a number and loops if it isn't
   while(isNaN(passwordLength)){
     alert("Invalid input. Must use a number")
-    var passwordLength = (prompt("Enter length of password between 8 and 128 characters:"));
+    // var passwordLength = (prompt("Enter length of password between 8 and 128 characters:"));
+    generatePassword();
   }
 
   var randomPassword=[];
@@ -73,8 +74,12 @@ var characterConfirm = (prompt("Would you like characters in your password? Type
   }
 }
 
+//Resets iterator
 i=0;
+
+
 var upperConfirm = (prompt("Would you like upper case letters in your password? Type y/n"));
+//Confirms if user wants upper case letters in their password
 while(i<1){
   if(upperConfirm === 'y'){
     randomPassword = randomPassword.concat(upper);
@@ -89,7 +94,10 @@ while(i<1){
   }
 }
 
+//Resets iterator
 i=0;
+
+//Confirms if user wants lower case letters in their password
 var lowerConfirm = (prompt("Would you like lower case letters in your password? Type y/n"));
 while(i<1){
   if(lowerConfirm === 'y'){
@@ -104,12 +112,15 @@ while(i<1){
     
   }
 }
+//Gives an alert message if no password parameter is selected, restarts the function
 if(numberConfirm === 'n' && characterConfirm === 'n' && upperConfirm === 'n' && lowerConfirm === 'n'){
   alert("Please select at least one password paramter");
  generatePassword();
 
 }
 var finalPassword = "";
+//Randomly selects a single character from the randomPassword string created. Loops and adds an additional
+//character for the value of passwordLength
 for(var x=0; x < passwordLength; x++){
   finalPassword = finalPassword + randomPassword[Math.floor(Math.random() * randomPassword.length)];
  
