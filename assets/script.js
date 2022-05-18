@@ -112,7 +112,7 @@ while(i<1){
     
   }
 }
-//Gives an alert message if no password parameter is selected, restarts the function
+//Gives an alert message if no password parameter is selected, restarts the function if so
 if(numberConfirm === 'n' && characterConfirm === 'n' && upperConfirm === 'n' && lowerConfirm === 'n'){
   alert("Please select at least one password paramter");
  generatePassword();
@@ -120,7 +120,7 @@ if(numberConfirm === 'n' && characterConfirm === 'n' && upperConfirm === 'n' && 
 }
 var finalPassword = "";
 //Randomly selects a single character from the randomPassword string created. Loops and adds an additional
-//character for the value of passwordLength
+//character to it for the value of passwordLength
 for(var x=0; x < passwordLength; x++){
   finalPassword = finalPassword + randomPassword[Math.floor(Math.random() * randomPassword.length)];
  
